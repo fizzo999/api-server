@@ -14,33 +14,34 @@ router.post('/food', createOnePieceOffood);
 router.put('/food/:id', updateOnePieceOffood);
 router.delete('/food/:id', deleteOnePieceOffood);
 
-function getManyfood(req, res) {
-  let allfood = food.read();
+async function getManyfood(req, res) {
+  let allfood = await food.read();
   res.status(200).json(allfood);
 }
 
-function getOnePieceOffood(req, res) {
-  const id = parseInt(req.params.id);
-  let onePieceOffood = food.read(id);
+async function getOnePieceOffood(req, res) {
+  // const id = parseInt(req.params.id);
+  const id = req.params.id;
+  let onePieceOffood = await food.read(id);
   res.status(200).json(onePieceOffood);
 }
 
-function createOnePieceOffood(req, res) {
+async function createOnePieceOffood(req, res) {
   let item = req.body;
-  let createdPieceOfClothing = food.create(item);
+  let createdPieceOfClothing = await food.create(item);
   res.status(201).json(createdPieceOfClothing);
 }
 
-function updateOnePieceOffood(req, res) {
-  const id = parseInt(req.params.id);
+async function updateOnePieceOffood(req, res) {
+  const id = req.params.id;
   let item = req.body;
-  let successMessageForUpdate = food.update(id, item)
+  let successMessageForUpdate = await food.update(id, item)
   res.status(200).json(successMessageForUpdate);
 }
 
-function deleteOnePieceOffood(req, res) {
-  const id = parseInt(req.params.id);
-  let successMessageForDelete = food.delete(id);
+async function deleteOnePieceOffood(req, res) {
+  const id = req.params.id;
+  let successMessageForDelete = await food.delete(id);
   res.status(200).json(successMessageForDelete);
 }
 

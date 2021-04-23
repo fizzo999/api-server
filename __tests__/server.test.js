@@ -18,21 +18,27 @@ describe('API SERVER TESTING:', () => {
   //   console.log('==================================', response.body.record);
   // });
 
-  it('should retrieve an item from the db', async () => {
-    const response = await mockRequest.get('/clothes/1');
-    expect(response.status).toBe(200);
+  // it('should retrieve an item from the db', async () => {
+  //   const response = await mockRequest.get('/clothes/1');
+  //   expect(response.status).toBe(200);
     // expect(response.body).toBe(true);
     // console.log('===========================================', response);
-  });
+  // });
 
-  it('should retieve all items from the db', async () => {
-    const response = await mockRequest.get('/clothes');
-    expect(response.status).toBe(200);
-  });
+  // it('should retieve all items from the db', async () => {
+  //   const response = await mockRequest.get('/food');
+  //   expect(response.status).toBe(200);
+  // });
 
   // it('should retieve all items from the db', async () => {
   //   const response = await mockRequest.delete('/clothes/1');
   //   expect(response.status).toBe(200);
   // });
+
+  it('should respond with a 404 on bad method', async () => {
+    return mockRequest.patch('/food').then(data => {
+      expect(data.status).toBe(404);
+    });
+  });
 
 });
