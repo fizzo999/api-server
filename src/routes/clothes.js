@@ -15,33 +15,33 @@ router.post('/clothes', createOnePieceOfClothes);
 router.put('/clothes/:id', updateOnePieceOfClothes);
 router.delete('/clothes/:id', deleteOnePieceOfClothes);
 
-function getManyClothes(req, res) {
-  let allClothes = clothes.read();
+async function getManyClothes(req, res) {
+  let allClothes = await clothes.read();
   res.status(200).json(allClothes);
 }
 
-function getOnePieceOfClothes(req, res) {
-  const id = parseInt(req.params.id);
-  let onePieceOfClothes = clothes.read(id);
+async function getOnePieceOfClothes(req, res) {
+  const id = req.params.id;
+  let onePieceOfClothes = await clothes.read(id);
   res.status(200).json(onePieceOfClothes);
 }
 
-function createOnePieceOfClothes(req, res) {
+async function createOnePieceOfClothes(req, res) {
   let item = req.body;
-  let createdPieceOfClothing = clothes.create(item);
+  let createdPieceOfClothing = await clothes.create(item);
   res.status(201).json(createdPieceOfClothing);
 }
 
-function updateOnePieceOfClothes(req, res) {
-  const id = parseInt(req.params.id);
+async function updateOnePieceOfClothes(req, res) {
+  const id = req.params.id;
   let item = req.body;
-  let successMessageForUpdate = clothes.update(id, item)
+  let successMessageForUpdate = await clothes.update(id, item)
   res.status(200).json(successMessageForUpdate);
 }
 
-function deleteOnePieceOfClothes(req, res) {
-  const id = parseInt(req.params.id);
-  let successMessageForDelete = clothes.delete(id);
+async function deleteOnePieceOfClothes(req, res) {
+  const id = req.params.id;
+  let successMessageForDelete = await clothes.delete(id);
   res.status(200).json(successMessageForDelete);
 }
 
