@@ -2,10 +2,6 @@
 
 basic server with focus on mongoDb using class constructor for shaping data model and routes
 
-# basic-api-server
-
-basic server to showcase how to break out routes following data modelling for db using class. Also expanding on middleware and tests
-
 ## Author: Fizzo Pannosch
 
 **Version**: 1.0.0
@@ -14,17 +10,19 @@ basic server to showcase how to break out routes following data modelling for db
 
 ### <center> links and resources </center>
 
-#### <center> [heroku deployed site](https://fizzo-basic-api-server.herokuapp.com/food) </center>
+#### <center> [heroku deployed site](https://fizzo-api-server.herokuapp.com/) </center>
+
+![app is working on swagger](src/1425.PNG)
 
 <!-- #### <center> [github actions](https://github.com/fizzo999/server-deployment-practice/actions) </center> -->
 
 <!-- #### <center> [github pull request](https://github.com/fizzo999/server-deployment-practice/pull/1) </center> -->
 
-#### <center> [ci/cd - github](https://github.com/fizzo999/basic-api-server/runs/2406395315?check_suite_focus=true) </center>
+#### <center> [ci/cd - github](https://github.com/fizzo999/api-server/actions/runs/776719270) </center>
 
-#### <center> [merged pull request - github](https://github.com/fizzo999/basic-api-server/pull/1) </center>
+#### <center> [merged pull request - github](https://github.com/fizzo999/api-server/pull/2) </center>
 
-![Cont Integration Cont Deploy](src/continuousIntegrationContinuousDepolyment002.png)
+<!-- ![Cont Integration Cont Deploy](src/continuousIntegrationContinuousDepolyment002.png) -->
 
 ## <center> UML DIAGRAM </center>
 
@@ -65,20 +63,20 @@ tests performed with jest and supertest
 
 ## Change Log
 
-04-21-2021 7:59pm - Application now has a fully-functional express server, with POST/GET/PUT/DELETE route ('/clothes') and ('/food') endpoints.
+04-22-2021 10:59pm - Application now has a fully-functional express server, with POST/GET/PUT/DELETE route ('/clothes') and ('/food') endpoints, mongodb working locally on my own machine.
 
 ## Credits and Collaborations
 
-thank you Nicholas Cerillo for help with part of the delete algorithm of identifying the index of the item to be deleted.
+thank you Dan Engel for help with asynch function.
 
 Number and name of feature: setup file structure, write server.js, index,js, 404.js, 500.js, test.js.yml - repo on github and deploy to heroku
 Estimate of time needed to complete: 2 hours
-Start time: 2:10 pm
-Finish time: 4:10 pm
-Actual time needed to complete: 2 hours
+Start time: 4:00 pm
+Finish time: 3:00 pm
+Actual time needed to complete: 3 hours
 
 Number and name of feature: food routes and data model, test suites, bug fix, readme.md, wrrc diagram
 Estimate of time needed to complete: 2 hours
-Start time: 7:00 pm
-Finish time: 8:00 pm
-Actual time needed to complete: 1 hours
+Start time: 8:00 pm
+Finish time: 11:00 pm
+Actual time needed to complete: 3 hours
