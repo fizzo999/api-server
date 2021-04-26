@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 const clothesSchema = mongoose.Schema({
-  name: { type: String, required: true }, // required property for an item
+  name: { type: String, required: true },
   color: { type: String, required: true },
   price: { type: Number, required: true },
   type: { type: String, required: false}
