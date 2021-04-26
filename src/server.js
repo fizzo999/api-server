@@ -3,6 +3,16 @@
 const express = require('express');
 const app = express();
 
+
+// this following code block is for running the tests only - it is already part of index.js
+const dotenv = require('dotenv');
+dotenv.config();
+const mongoose = require('mongoose');
+const MONGODB_URI = process.env.MONGODB_URI;
+const options = { useNewUrlParser: true, useUnifiedTopology: true }; // don't read into this, just add them
+mongoose.connect(MONGODB_URI, options);
+
+
 const logger = require('./middleware/logger.js');
 // const validator = require('./middleware/validator.js');
 const customClothesRoutes = require('./routes/clothes.js');

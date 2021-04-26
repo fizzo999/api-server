@@ -28,6 +28,7 @@ async function getOnePieceOfClothes(req, res) {
 
 async function createOnePieceOfClothes(req, res) {
   let item = req.body;
+  console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++ HERE IS ONE CLOTHES PIECE', req.body)
   let createdPieceOfClothing = await clothes.create(item);
   res.status(201).json(createdPieceOfClothing);
 }
